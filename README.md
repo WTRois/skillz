@@ -31,6 +31,10 @@ Designs comprehensive relational database schemas from business or technical req
 Generates complete REST API contracts (method, path, request/response JSON schemas, HTTP status codes, error envelopes, auth requirements) before any implementation code is written. Contract-first design for frontend/backend alignment.
 - **Interactive Action Query**: After generating the contract, asks the user for permission to save the API contract document to a recommended file path (e.g. `docs/api-contract-[domain].md`).
 
+### 7. ⚡ Laravel + Inertia + Vue Optimizer (`optimize-laravel-inertia-vue.md`)
+Enforces best practices for Laravel + Inertia.js + Vue 3 + TypeScript full-stack applications. Covers controller patterns, FormRequest validation, Policy authorization, Inertia data transfer, Vue Composition API, TypeScript typing, testing strategy, and performance optimization.
+- **Interactive Action Query**: After generating code or completing a review, suggests contextually relevant next actions (e.g. generating tests, creating type definitions, applying fixes) and waits for user confirmation.
+
 ---
 
 ## ⚙️ Setup and Integration across Agents
@@ -97,6 +101,16 @@ Zed natively supports **Agent Skills**. To install these helpers globally:
 2. Copy the `api-designer.md` file into that folder and name it **`SKILL.md`**:
    ```bash
    cp api-designer.md ~/.agents/skills/api-designer/SKILL.md
+   ```
+
+#### To setup `optimize-laravel-inertia-vue`:
+1. Create a directory named `optimize-laravel-inertia-vue` under your user's global agent skills folder:
+   ```bash
+   mkdir -p ~/.agents/skills/optimize-laravel-inertia-vue
+   ```
+2. Copy the `optimize-laravel-inertia-vue.md` file into that folder and name it **`SKILL.md`**:
+   ```bash
+   cp optimize-laravel-inertia-vue.md ~/.agents/skills/optimize-laravel-inertia-vue/SKILL.md
    ```
 
 *Restart your Zed Editor or trigger the Assistant Panel. You can type `/` to see the skills registered, or type standard trigger keywords.*
@@ -196,6 +210,12 @@ If you use Anthropic’s Claude Web interface, you can leverage "Projects" to ke
 - `"build API for feature X"` / `"plan endpoints"`
 - `"request/response schema"` / `"before I build the API"`
 - `"api-designer"` / `"OpenAPI"` / `"swagger spec"`
+
+### For `optimize-laravel-inertia-vue`:
+- `"create a new feature"` / `"build CRUD for [resource]"`
+- `"refactor this controller"` / `"optimize this page"`
+- `"review this Inertia code"` / `"best practices for Laravel Vue"`
+- `"optimize-laravel-inertia-vue"` / `"Laravel Inertia best practices"`
 
 ---
 
