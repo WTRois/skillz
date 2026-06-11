@@ -1,19 +1,18 @@
-# 🛠️ Full Project Analyzer Skill
+# 🛠️ Global Developer Agent Skills
 
-A comprehensive, zero-dependency codebase analysis skill and instructions template designed for agentic AI architectures (such as Zed, Cursor, Claude Projects, and GitHub Copilot).
-
-It guides LLMs to systematically auto-detect programming languages, frameworks, ORMs, and databases, map entry points, trace structural architectures, extract schemas, and generate beautiful, standardized Markdown documentation accompanied by renderable Mermaid diagrams.
+A collection of comprehensive, zero-dependency codebase helper skills and instruction templates designed for agentic AI architectures (such as Zed, Cursor, Claude Projects, and GitHub Copilot).
 
 ---
 
-## 🚀 How It Works (The Core Pipeline)
+## 📂 Available Skills
 
-The instruction sets in this skill guide the AI through a structured multi-phase workflow:
-1. **Phase 0 (Stack Auto-Detection)**: Inspects files against a robust signature matrix to compile a concrete `[STACK]` configuration.
-2. **Phase 1 (Reconnaissance)**: Swiftly pinpoints main entry point files and scopes codebase size without wasting context window tokens.
-3. **Phase 2 (Deep Analysis)**: Digs into target layers, reading database migrations, route maps, and config files relative to the detected tech stack.
-4. **Phase 3 (Diagram Generation)**: Designs System Architecture Flowcharts, ER diagrams (for relational databases), and Sequence Diagrams while observing strict schema rules.
-5. **Phase 4 (Markdown Output)**: Compiles the final document with zero-placeholder markdown reporting.
+### 1. 🔍 Full Project Analyzer (`full-project-analyzer.md`)
+Guides LLMs to auto-detect programming languages, frameworks, ORMs, and databases, map entry points, trace modular architectures, extract schemas, and generate beautiful, standardized Markdown documentation accompanied by renderable Mermaid diagrams.
+- **Automatic Output File**: Generates `project-full-summary-by-skillz.md` in the project's root folder.
+
+### 2. 📝 PR Writer (`pr-writer.md`)
+Analyzes git diff structures (staged, unstaged, or branch comparisons) to generate concise Conventional Commit messages and structured, copy-pasteable Pull Request (PR) descriptions.
+- **Critical Zed Rule**: Automatically forces the `--no-pager` flag on Git CLI queries to prevent Zed's terminal shell from hanging.
 
 ---
 
@@ -21,8 +20,9 @@ The instruction sets in this skill guide the AI through a structured multi-phase
 
 ### 1. Zed Editor (Agentic Mode)
 
-Zed natively supports **Agent Skills**. To install this helper globally:
+Zed natively supports **Agent Skills**. To install these helpers globally:
 
+#### To setup `full-project-analyzer`:
 1. Create a directory named `full-project-analyzer` under your user's global agent skills folder:
    ```bash
    mkdir -p ~/.agents/skills/full-project-analyzer
@@ -31,19 +31,31 @@ Zed natively supports **Agent Skills**. To install this helper globally:
    ```bash
    cp full-project-analyzer.md ~/.agents/skills/full-project-analyzer/SKILL.md
    ```
-3. Restart your Zed Editor or trigger the Assistant Panel. You can type `/` to see the skill registered, or simply prompt: 
-   > *"Analyze this project and document it."*
+
+#### To setup `pr-writer`:
+1. Create a directory named `pr-writer` under your user's global agent skills folder:
+   ```bash
+   mkdir -p ~/.agents/skills/pr-writer
+   ```
+2. Copy the `pr-writer.md` file into that folder and name it **`SKILL.md`**:
+   ```bash
+   cp pr-writer.md ~/.agents/skills/pr-writer/SKILL.md
+   ```
+
+*Restart your Zed Editor or trigger the Assistant Panel. You can type `/` to see the skills registered, or type standard trigger keywords.*
 
 ---
 
 ### 2. Cursor Editor (`.cursorrules`)
 
-Cursor utilizes `.cursorrules` inside the root of your project to govern AI interactions and answers.
+Cursor utilizes `.cursorrules` located in the root of your project to govern AI interactions.
 
 1. Create a `.cursorrules` file in the root of your repository (or append to your existing one).
-2. Paste the contents of `full-project-analyzer.md` as custom system instructions inside `.cursorrules`.
-3. Highlight the file in Composer or chat using `@.cursorrules` and ask:
+2. Append the contents of `full-project-analyzer.md` and `pr-writer.md` as custom system instructions inside `.cursorrules`.
+3. Reference them in the Composer/Chat panel using `@.cursorrules` and ask:
    > *"Run project analyzer rules to document this repository."*
+   > OR
+   > *"Write a PR description based on the pr-writer rules."*
 
 ---
 
@@ -55,16 +67,18 @@ GitHub Copilot (in VS Code/GitHub) automatically reads workspace prompt suggesti
    ```bash
    .github/copilot-instructions.md
    ```
-2. Insert a clear preamble pointing to the instructions block, followed by the content of `full-project-analyzer.md`:
+2. Insert a clear preamble pointing to the instruction blocks, followed by the content of your desired skills:
    ```markdown
    # Copilot Instructions
 
-   When asked to document, analyze, or map the system architecture of this project, execute the rules described below:
+   - When asked to document, analyze, or map the system architecture of this project, execute the rules described in:
+     [Paste content of full-project-analyzer.md here]
 
-   [Paste the content of full-project-analyzer.md here]
+   - When asked to write commits or pull requests, execute the rules described in:
+     [Paste content of pr-writer.md here]
    ```
 3. Issue a command in Copilot Chat:
-   > *"@workspace generate architecture and database documentation."*
+   > *"@workspace generate draft documentation"* or *"@workspace write a PR from staged changes"*
 
 ---
 
@@ -74,24 +88,28 @@ If you use Anthropic’s Claude Web interface, you can leverage "Projects" to ke
 
 1. Open your project on Claude.
 2. Navigate to **Project Instructions** in the right-side panel.
-3. Copy/paste the full content of `full-project-analyzer.md` into the instructions box and save.
-4. Upload your codebase files (or a ZIP folder of the codebase) and prompt:
-   > *"Analyze this workspace."*
+3. Copy/paste the full content of `full-project-analyzer.md` and/or `pr-writer.md` into the instructions box and save.
 
 ---
 
 ## 🎯 Trigger Keywords
 
-The agent will automatically latch onto this skill when you use keywords like:
+### For `full-project-analyzer`:
 - `"analyze this project"` / `"analisis repository ini"`
 - `"document this codebase"` / `"buat dokumentasi kode"`
 - `"explain how this repo works"` / `"bagaimana cara kerja project ini"`
 - `"create system architecture diagram"` / `"buat diagram arsitektur"`
 - `"what tables do we have in the database"` / `"buat ERD dari skema tabel"`
 
+### For `pr-writer`:
+- `"write a PR description"` / `"buat deskripsi PR"`
+- `"generate a commit message"` / `"bikin commit message"`
+- `"create a PR from diff"` / `"generate PR dari diff ini"`
+- `"pr-writer"` / `"describe changes"`
+
 ---
 
-## 🛑 Critical Rules for Diagram Previews
+## 🛑 Critical Guardrails
 
 * **No Inline HTML in Mermaid**: Many Markdown/preview engines (including Zed's built-in previewer) will crash or fail to output if your Mermaid charts contain raw HTML tags (e.g., `<br>`, `<b>`, `<i>`). **Keep diagrams strictly plain text.**
-* **Consistency in Output Language**: The analyzer is instructed to draft the final markdown report in the **same language** that you used to query it (e.g. Indonesian if queried in Indonesian, or English if queried in English).
+* **Consistency in Output Language**: The analyzers are instructed to draft the output in the **same language** that you used to query them (e.g. Indonesian if queried in Indonesian, or English if queried in English).
