@@ -348,6 +348,8 @@ sequenceDiagram
 ## Phase 4 — Document Structure Output
 
 Produce the final documentation using the template below. 
+- You MUST write and save the completed documentation directly into a file in the project's root directory named `project-full-summary-by-skillz.md`.
+- In the chat interface, provide only a short summary of the key findings and confirm to the user that the full analysis has been written to `project-full-summary-by-skillz.md` at the root.
 - You MUST write the document in the **user's preferred language** (default is English, but if the user prompts in Indonesian, write the document in Indonesian).
 - Delete any empty sections. Do not leave "N/A" or "TODO".
 
