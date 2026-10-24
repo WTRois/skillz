@@ -1,14 +1,10 @@
 ---
 name: full-project-analyzer
 description: >
-  Analyzes any codebase in-depth (architecture, modules, database schema, configuration, and API endpoints)
-  and generates a structured, clean Markdown document with Mermaid flowcharts (system architecture),
-  ER diagrams, and sequence diagrams (main request flows).
-  Auto-detects the tech stack from signature files (supporting Go, Node.js, Python, PHP, Java, Rust, C#).
-  Trigger this skill when the user asks: "analyze this project", "document this codebase",
-  "explain how this repo works", "create architecture diagram", "generate project docs",
-  "what tables are in the DB", or similar codebase analysis queries.
-  ALWAYS invoke this skill for overall project documentation or module analysis.
+  Analyzes a codebase's architecture, modules, data model, configuration, entry points, and APIs,
+  then produces structured Markdown documentation with Mermaid diagrams. Use for repository analysis,
+  architecture documentation, system-flow explanation, or project mapping. For a dedicated security audit
+  use security-auditor; for a relational schema design from requirements use db-schema-designer.
 ---
 
 # Project Analyzer
@@ -347,9 +343,9 @@ sequenceDiagram
 
 ## Phase 4 — Document Structure Output
 
-Produce the final documentation using the template below. 
-- You MUST write and save the completed documentation directly into a file in the project's root directory named `project-full-summary-by-skillz.md`.
-- In the chat interface, provide only a short summary of the key findings and confirm to the user that the full analysis has been written to `project-full-summary-by-skillz.md` at the root.
+Produce the final documentation using the template below.
+- Recommend `project-full-summary-by-skillz.md` as the output path, but ask for explicit confirmation before creating or overwriting it.
+- If the user declines file creation, provide the analysis in the chat instead.
 - You MUST write the document in the **user's preferred language** (default is English, but if the user prompts in Indonesian, write the document in Indonesian).
 - Delete any empty sections. Do not leave "N/A" or "TODO".
 

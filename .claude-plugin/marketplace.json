@@ -1,0 +1,31 @@
+{
+  "name": "skillz",
+  "owner": {
+    "name": "WTRois"
+  },
+  "metadata": {
+    "description": "Portable software development Agent Skills",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "development-skills",
+      "description": "Software design, implementation, review, security, and delivery skills",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/api-designer",
+        "./skills/code-reviewer",
+        "./skills/component-generator",
+        "./skills/db-schema-designer",
+        "./skills/full-project-analyzer",
+        "./skills/optimize-laravel-inertia-vue",
+        "./skills/optimize-project",
+        "./skills/planmate",
+        "./skills/pr-writer",
+        "./skills/security-audit",
+        "./skills/security-auditor"
+      ]
+    }
+  ]
+}

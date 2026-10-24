@@ -1,23 +1,7 @@
----
-name: security-auditor
-description: >
-  Melakukan security audit menyeluruh pada codebase web menggunakan 6 framework keamanan
-  sekaligus: OWASP Top 10 (2021), OWASP API Security Top 10 (2023), CWE/SANS Top 25 (2024),
-  OWASP ASVS Level 1-2, Security Headers, dan Dependency/Supply Chain Security.
-  Stack auto-detected untuk menerapkan pola vulnerability yang tepat per bahasa dan framework.
-  Output: laporan terstruktur dengan severity rating, referensi CVE/CWE, kode vulnerable,
-  kode fix, dan remediation roadmap berdasarkan prioritas risiko.
-  Gunakan skill ini ketika: "audit keamanan project ini", "cek vulnerability", "security review",
-  "ada celah keamanan apa", "apakah kode ini aman", "cek OWASP", "security audit",
-  atau permintaan sejenis terkait keamanan kode.
----
+# Security Audit Reference Checklists
 
-# Security Auditor
+This reference contains the detailed checklists used by `security-auditor`. Apply only checks relevant to the detected stack.
 
-Audit keamanan menyeluruh menggunakan **6 security framework** secara bersamaan.
-Stack auto-detected untuk pola vulnerability yang akurat per bahasa dan framework.
-
----
 
 ## Framework yang Digunakan
 

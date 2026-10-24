@@ -1,12 +1,9 @@
 ---
 name: component-generator
 description: >
-  Detects the active UI framework (Vue 3, React, Svelte, Angular, SolidJS, Astro, etc.)
-  and generates production-ready UI components complete with scoped typing, props, event emitters,
-  composable hooks (if required), and implementation examples.
-  Trigger this skill when the user asks: "create a component", "generate UI components",
-  "build a button/modal/card/form/table", or similar UI component generation queries.
-  ALWAYS invoke this skill for any UI component creation requests, even if the framework is not specified.
+  Detects the active UI framework and project conventions, then designs typed, accessible components
+  with props, events, state, styling, and usage examples. Use when creating UI components such as buttons,
+  forms, cards, tables, or modals; ask for the target stack if it cannot be detected.
 ---
 
 # Component Generator
@@ -185,7 +182,7 @@ export function [ComponentName]({
   children,
 }: [ComponentName]Props) {
   // State & interaction hooks
-  
+
   return (
     <button
       disabled={disabled || loading}

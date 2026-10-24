@@ -1,15 +1,10 @@
 ---
 name: code-reviewer
 description: >
-  Reviews code after new features are written — scanning for bugs, security vulnerabilities,
-  performance bottlenecks, and convention violations. Generates a structured review report
-  with severity ratings, exact file locations, clear problem explanations, and concrete
-  fix suggestions including corrected code samples.
-  Trigger this skill when the user asks: "review this code", "code review", "check for bugs",
-  "any issues?", "security audit", "review new feature", "check performance",
-  "is this code safe?", "code-reviewer", or after finishing a feature and wanting validation
-  before push/PR.
-  ALWAYS invoke this skill for any review, audit, or code quality validation request.
+  Reviews existing code for bugs, performance, maintainability, and project conventions, with exact
+  locations and actionable fixes. Use for general code review, especially after a feature or before a
+  PR. For dedicated OWASP/security audits use security-auditor; for Laravel + Inertia + Vue architecture
+  use optimize-laravel-inertia-vue. Trigger on code review, bug review, performance review, or quality audit.
 ---
 
 # Code Reviewer

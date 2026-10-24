@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "evals": [
+    {
+      "skill": "api-designer",
+      "prompt": "Design a REST API contract for creating and listing team projects. Include auth, validation, pagination, errors, and examples.",
+      "expected": ["REST endpoints", "request and response schemas", "authentication", "error responses"]
+    },
+    {
+      "skill": "code-reviewer",
+      "prompt": "Review this changed service for bugs, performance issues, and maintainability problems. Do not perform a dedicated OWASP audit.",
+      "expected": ["severity", "file and line location", "actionable fix"]
+    },
+    {
+      "skill": "security-auditor",
+      "prompt": "Audit this web repository for OWASP risks, attack surface, dependency security, and concrete remediation. Keep the audit read-only.",
+      "expected": ["STACK", "SURFACE", "confirmed versus possible findings", "limitations"]
+    },
+    {
+      "skill": "optimize-laravel-inertia-vue",
+      "prompt": "Build a Laravel Inertia Vue project feature with authorization, validation, typed props, a form, and tests.",
+      "expected": ["thin controller", "FormRequest or Policy", "typed Vue", "verification"]
+    },
+    {
+      "skill": "planmate",
+      "prompt": "Plan a cross-file feature implementation with explicit scope, risks, verification, and an approval gate before coding.",
+      "expected": ["planning mode", "implementation plan", "approval gate", "verification plan"]
+    },
+    {
+      "skill": "pr-writer",
+      "prompt": "Turn the current git diff into a Conventional Commit message and a concise pull request description. Do not commit or push.",
+      "expected": ["commit message", "PR description", "no automatic git write"]
+    },
+    {
+      "skill": "optimize-project",
+      "prompt": "Audit this repository for dead code and unused dependencies, estimate impact, and propose safe cleanup without deleting anything automatically.",
+      "expected": ["evidence", "impact", "approval before changes", "validation"]
+    },
+    {
+      "skill": "security-audit",
+      "prompt": "Perform a read-only comprehensive security audit of this repository across application code, dependencies, CI/CD, and deployment configuration.",
+      "expected": ["scope", "trust boundaries", "evidence-based findings", "limitations"]
+    }
+  ]
+}

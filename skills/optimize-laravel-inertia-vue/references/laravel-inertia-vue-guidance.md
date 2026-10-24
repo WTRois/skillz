@@ -1,22 +1,7 @@
----
-name: optimize-laravel-inertia-vue
-description: >
-  Enforces best practices for Laravel + Inertia.js + Vue 3 + TypeScript full-stack applications.
-  Use this skill when building new features, refactoring, code reviewing, debugging, testing,
-  or optimizing any Laravel Inertia Vue project.
-  Trigger this skill when the user asks: "create a new feature", "build CRUD for [resource]",
-  "refactor this controller", "optimize this page", "review this Inertia code",
-  "best practices for Laravel Vue", "optimize-laravel-inertia-vue", or any task involving
-  Laravel controllers, Inertia responses, Vue pages, or full-stack TypeScript patterns.
-  ALWAYS invoke this skill for any Laravel + Inertia + Vue development task.
----
+# Laravel + Inertia + Vue 3 Detailed Guidance
 
-# Laravel + Inertia + Vue 3 Best Practices
+Detailed patterns and checklists for the `optimize-laravel-inertia-vue` skill.
 
-Comprehensive ruleset and workflow for building maintainable, type-safe, and performant
-full-stack applications with Laravel, Inertia.js, and Vue 3 Composition API.
-
----
 
 ## Core Principles
 
@@ -209,10 +194,10 @@ For secondary or slow-loading data (e.g., analytics, charts, unrelated tables), 
 // In Controller (Deferred / Lazy Loading)
 return Inertia::render('Projects/Index', [
     'projects' => ProjectResource::collection($projects), // Immediate payload
-    
+
     // Asynchronously deferred prop (Inertia v2.0+)
     'analytics' => Inertia::defer(fn () => AnalyticsService::getSummary()),
-    
+
     // Lazy loaded (only requested on-demand by client)
     'archivedCount' => Inertia::lazy(fn () => Project::where('status', 'archived')->count()),
 ]);
@@ -227,10 +212,10 @@ Use `useForm()` for all standard CRUD operations. Prioritize **server-side valid
   <form @submit.prevent="submit" class="space-y-4">
     <div>
       <label for="name">Project Name</label>
-      <input 
-        id="name" 
-        v-model="form.name" 
-        type="text" 
+      <input
+        id="name"
+        v-model="form.name"
+        type="text"
         class="border p-2 w-full"
         :class="{ 'border-red-500': form.errors.name }"
       />
@@ -239,9 +224,9 @@ Use `useForm()` for all standard CRUD operations. Prioritize **server-side valid
 
     <div>
       <label for="description">Description</label>
-      <textarea 
-        id="description" 
-        v-model="form.description" 
+      <textarea
+        id="description"
+        v-model="form.description"
         class="border p-2 w-full"
         :class="{ 'border-red-500': form.errors.description }"
       ></textarea>

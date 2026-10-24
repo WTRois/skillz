@@ -1,15 +1,10 @@
 ---
 name: db-schema-designer
 description: >
-  Use this skill whenever the user wants to design, generate, review, or document a database schema.
-  Triggers include: "create database schema", "design ERD", "create database tables", "migration SQL",
-  "table relationships", "foreign key", "database index", "normalize database", "schema for app X",
-  "database design for [app/domain]", or any request involving tables, entities, relationships, and
-  database structure — even if the user does not explicitly say "schema" or "ERD".
-  Always use this skill when: user mentions entity relationships, wants a data model, asks to
-  convert requirements into database structure, or needs SQL migration scripts.
-  Output format: Markdown document containing ERD (Mermaid), migration SQL, relation map, and index recommendations.
-  Do NOT use for: NoSQL schema (MongoDB, DynamoDB), query optimization on existing schema, or ORM-specific code generation.
+  Designs, reviews, or documents relational database schemas from requirements, including ERDs,
+  migrations, relationships, delete policies, and indexes. Use for SQL table design, normalization,
+  foreign keys, or migration planning. Do not use for NoSQL schema design, query optimization on an
+  existing schema, or ORM-specific code generation.
 ---
 
 # DB Schema Designer

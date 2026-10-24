@@ -1,13 +1,9 @@
 ---
 name: pr-writer
 description: >
-  Reads git diff (staged/unstaged changes or branch comparisons) and generates:
-  (1) a concise conventional commit message and (2) a structured, comprehensive Pull Request (PR) description.
-  Ready to copy-paste directly to GitHub, GitLab, Bitbucket, or ADO.
-  Trigger this skill when the user asks: "write a PR description", "generate a commit message",
-  "write commit description", "create a PR from diff", "pr-writer", "explain my changes",
-  or before pushing/merging changes.
-  ALWAYS invoke this skill when a git diff is present or when a change-description documentation is requested.
+  Reads staged, unstaged, or branch diffs and writes a Conventional Commit message plus a structured
+  pull request description. Use for commit wording, PR descriptions, or explaining an existing diff.
+  Never commit or push automatically; ask for explicit confirmation before any git write operation.
 ---
 
 # PR Writer

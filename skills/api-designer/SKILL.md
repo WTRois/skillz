@@ -1,16 +1,10 @@
 ---
 name: api-designer
 description: >
-  Use this skill BEFORE any endpoint is coded — whenever the user wants to design, plan, document,
-  or review a REST API. Triggers include: "design API", "create API contract", "what endpoints do I need",
-  "API spec", "request/response schema", "build API for feature X", "API contract",
-  "plan endpoints", "OpenAPI", "swagger spec", "before I build the API", or any phrase implying
-  API planning before implementation starts.
-  Always use this skill when: user is planning a new feature that will expose HTTP endpoints,
-  asking how to structure an API resource, or needs to align frontend/backend before development starts.
-  Output: Markdown API contract — method + path, request/response schema (JSON), HTTP status codes,
-  error envelope, and auth requirement per endpoint.
-  Do NOT use for: GraphQL schema design, gRPC/Protobuf, SDK code generation, or existing API debugging.
+  Designs REST API contracts before implementation, including endpoints, request/response schemas,
+  validation, errors, authentication, and versioning. Use for REST API design, endpoint planning,
+  OpenAPI-style contracts, or frontend/backend alignment. Do not use for GraphQL, gRPC/Protobuf, SDK
+  generation, or debugging an already implemented API.
 ---
 
 # API Designer
