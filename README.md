@@ -27,6 +27,7 @@ skillz/
 | `optimize-laravel-inertia-vue` | Laravel + Inertia.js + Vue 3 + TypeScript work |
 | `optimize-project` | Project-wide cleanup and optimization audit |
 | `planmate` | Structured planning, execution, and verification for complex work |
+| `project-documentation-workflow` | Consistent, implementation-ready project documentation |
 | `pr-writer` | Commit messages and pull request descriptions from diffs |
 | `security-audit` | Comprehensive read-only security audits across the stack |
 | `security-auditor` | Focused OWASP and supply-chain security audits |

@@ -40,6 +40,11 @@
       "skill": "security-audit",
       "prompt": "Perform a read-only comprehensive security audit of this repository across application code, dependencies, CI/CD, and deployment configuration.",
       "expected": ["scope", "trust boundaries", "evidence-based findings", "limitations"]
+    },
+    {
+      "skill": "project-documentation-workflow",
+      "prompt": "Document this existing repository for implementation by a coding agent. Inspect the repository first, distinguish confirmed facts from assumptions, and ask focused questions for high-impact unknowns.",
+      "expected": ["repository inspection", "confirmed and unknown facts", "cross-document consistency", "focused clarification questions"]
     }
   ]
 }
